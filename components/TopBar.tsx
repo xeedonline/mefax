@@ -1,60 +1,66 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useTeletextStore } from '@/store/teletext';
-import { ttDate, ttTime } from '@/lib/teletext-utils';
+
+const DAYS   = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+const MONTHS = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
 
 export default function TopBar() {
   const { currentPage, inputBuffer } = useTeletextStore();
-  const [time, setTime] = useState('');
-  const [date, setDate] = useState('');
+  const [now, setNow] = useState<Date | null>(null);
 
   useEffect(() => {
-    const tick = () => {
-      setTime(ttTime());
-      setDate(ttDate());
-    };
+    const tick = () => setNow(new Date());
     tick();
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
   }, []);
 
-  // Display: P1__ while typing, P100 when settled
-  const displayBuf = inputBuffer
-    ? (inputBuffer + '____').slice(0, 4).replace(/_/g, '_')
-    : String(currentPage).padEnd(3, ' ');
+  const isTyping = inputBuffer.length > 0;
 
-  const pageDisplay = inputBuffer
-    ? `P${(inputBuffer + '___').slice(0, 4)}`
-    : `P${String(currentPage).padStart(3, '0')}`;
+  // Build page display: "P101" settled, "P1__" while typing
+  const rawPage  = String(currentPage);
+  const digits   = isTyping ? inputBuffer : rawPage;
+  const padded   = (digits + '___').slice(0, Math.max(3, digits.length));
+  const pageStr  = 'P' + padded.replace(/_/g, '-');
+
+  const timeStr = now
+    ? `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`
+    : '--:--:--';
+
+  const dateStr = now
+    ? `${DAYS[now.getDay()]} ${pad(now.getDate())} ${MONTHS[now.getMonth()]}`
+    : '';
 
   return (
-    <header className="flex items-center justify-between bg-black border-b border-tt-cyan/30 px-2 py-0.5 shrink-0 tt-text">
-      {/* Page number */}
-      <div className="text-tt-cyan font-bold min-w-[5ch]">
-        {pageDisplay}
+    <header className="ceefax-header tt-text shrink-0">
+      {/* Service name */}
+      <div className="ceefax-header-brand">
+        <span className="text-tt-red">M</span>
+        <span className="text-tt-green">E</span>
+        <span className="text-tt-yellow">F</span>
+        <span className="text-tt-cyan">A</span>
+        <span className="text-tt-magenta">X</span>
       </div>
 
-      {/* Logo / service name */}
-      <div className="flex items-center gap-2">
-        <span className="text-tt-white tracking-widest hidden sm:inline">
-          <span className="text-tt-red">T</span>
-          <span className="text-tt-green">E</span>
-          <span className="text-tt-yellow">L</span>
-          <span className="text-tt-cyan">E</span>
-          <span className="text-tt-magenta">T</span>
-          <span className="text-tt-white">E</span>
-          <span className="text-tt-red">X</span>
-          <span className="text-tt-green">T</span>
-          <span className="text-tt-white"> UK</span>
-        </span>
-        <span className="text-tt-white sm:hidden">TELETEXT</span>
+      {/* Page number — yellow + blink while typing, cyan when settled */}
+      <div className={`ceefax-header-page ${isTyping ? 'text-tt-yellow' : 'text-tt-cyan'} font-bold`}>
+        {isTyping
+          ? <>{pageStr.slice(0, -1)}<span className="tt-blink">_</span></>
+          : pageStr
+        }
       </div>
 
-      {/* Clock + date */}
-      <div className="text-tt-white text-right">
-        <span className="text-tt-yellow">{time}</span>
-        <span className="text-tt-white/60 hidden sm:inline ml-2">{date}</span>
+      {/* Date + time */}
+      <div className="ceefax-header-clock">
+        <span className="text-tt-white">{dateStr}</span>
+        {dateStr && <span className="text-tt-white/40 mx-1">|</span>}
+        <span className="text-tt-yellow">{timeStr}</span>
       </div>
     </header>
   );
+}
+
+function pad(n: number) {
+  return String(n).padStart(2, '0');
 }

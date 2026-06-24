@@ -1,105 +1,102 @@
 'use client';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { useTeletextStore } from '@/store/teletext';
 
-const FAST_COLOURS = [
-  { key: 'red'    as const, bg: 'bg-tt-red',     label: 'RED'    },
-  { key: 'green'  as const, bg: 'bg-tt-green',   label: 'GRN'    },
-  { key: 'yellow' as const, bg: 'bg-tt-yellow',  label: 'YLW'    },
-  { key: 'blue'   as const, bg: 'bg-tt-blue',    label: 'BLU'    },
-];
+const KEYS = ['red', 'green', 'yellow', 'blue'] as const;
+
+const FT_STYLE: Record<string, { bg: string; text: string }> = {
+  red:    { bg: '#880000', text: '#ffffff' },
+  green:  { bg: '#007700', text: '#ffffff' },
+  yellow: { bg: '#888800', text: '#ffffff' },
+  blue:   { bg: '#0000aa', text: '#ffffff' },
+};
 
 export default function BottomBar() {
-  const { fastTextLinks, navigate, addDigit, clearInput, inputBuffer, currentPage } = useTeletextStore();
+  const { fastTextLinks, navigate, currentPage } = useTeletextStore();
   const [typed, setTyped] = useState('');
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  const handlePageGo = () => {
-    const val = typed.trim();
-    if (!val) return;
-    const n = parseInt(val, 10);
-    if (!isNaN(n)) navigate(n);
-    setTyped('');
-  };
-
-  const handleInputKey = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') handlePageGo();
-  };
 
   return (
-    <footer className="bg-black border-t border-tt-cyan/30 shrink-0 tt-text">
-      {/* FastText row */}
-      <div className="flex items-stretch">
-        {FAST_COLOURS.map(({ key, bg, label }) => {
-          const link = fastTextLinks[key];
+    <footer className="shrink-0 tt-text">
+
+      {/* ── FastText band ── */}
+      <div className="flex" style={{ height: '2.6em' }}>
+        {KEYS.map(color => {
+          const link = fastTextLinks[color];
+          const s    = FT_STYLE[color];
           return (
             <button
-              key={key}
-              className={`flex-1 py-1 text-center transition-opacity ${
-                link ? `${bg} text-black font-bold cursor-pointer hover:opacity-90 active:opacity-70` : `${bg} text-black/40 cursor-default`
-              }`}
+              key={color}
               onClick={() => link && navigate(link.page)}
               disabled={!link}
-              aria-label={link ? `${label}: ${link.label} (page ${link.page})` : label}
+              className="flex-1 flex flex-col items-center justify-center transition-all"
+              style={{
+                background: s.bg,
+                color: s.text,
+                opacity: link ? 1 : 0.55,
+                cursor: link ? 'pointer' : 'default',
+              }}
             >
-              <span className="text-xs sm:text-sm leading-none block">
-                {link ? link.label.toUpperCase().slice(0, 12) : label}
-              </span>
-              {link && (
-                <span className="text-xs leading-none block opacity-70">
-                  P{link.page}
-                </span>
+              {link ? (
+                <>
+                  <span className="font-bold leading-tight" style={{ fontSize: '0.8em' }}>
+                    {link.label.toUpperCase().slice(0, 12)}
+                  </span>
+                  <span className="leading-none" style={{ fontSize: '0.6em', opacity: 0.8 }}>
+                    p{link.page}
+                  </span>
+                </>
+              ) : (
+                <span style={{ fontSize: '0.6em', opacity: 0.4 }}>{color.slice(0, 3).toUpperCase()}</span>
               )}
             </button>
           );
         })}
-
-        {/* Page input */}
-        <div className="flex items-center gap-1 px-2 border-l border-tt-cyan/30">
-          <input
-            ref={inputRef}
-            type="text"
-            inputMode="numeric"
-            maxLength={4}
-            value={typed}
-            onChange={(e) => setTyped(e.target.value.replace(/\D/g, ''))}
-            onKeyDown={handleInputKey}
-            className="w-12 bg-tt-black text-tt-cyan border border-tt-cyan/50 text-center py-0.5 outline-none focus:border-tt-cyan tt-text"
-            placeholder="100"
-            aria-label="Enter page number"
-          />
-          <button
-            onClick={handlePageGo}
-            className="bg-tt-cyan text-black font-bold px-2 py-0.5 hover:bg-tt-white active:bg-tt-yellow transition-colors"
-          >
-            GO
-          </button>
-        </div>
       </div>
 
-      {/* Settings row (mobile-hidden on very small) */}
-      <SettingsRow />
+      {/* ── Mobile-only nav strip ── */}
+      <div className="lg:hidden flex items-center gap-1 px-1 py-1 bg-black border-t border-white/10">
+        <button
+          onClick={() => navigate(Math.max(currentPage - 1, 100))}
+          className="text-tt-cyan border border-tt-cyan/40 px-2 py-0.5 font-bold"
+          style={{ fontSize: '0.8em' }}
+        >◄</button>
+
+        <button
+          onClick={() => navigate(100)}
+          className="text-tt-white border border-white/20 px-2 py-0.5"
+          style={{ fontSize: '0.8em' }}
+        >HOME</button>
+
+        <input
+          type="text"
+          inputMode="numeric"
+          maxLength={4}
+          value={typed}
+          onChange={e => setTyped(e.target.value.replace(/\D/g, ''))}
+          onKeyDown={e => {
+            if (e.key === 'Enter' && typed) {
+              navigate(parseInt(typed, 10));
+              setTyped('');
+            }
+          }}
+          placeholder="P___"
+          className="flex-1 bg-black text-tt-cyan border border-tt-cyan/40 text-center py-0.5 outline-none"
+          style={{ fontSize: '0.9em', fontFamily: 'var(--font-teletext)' }}
+        />
+
+        <button
+          onClick={() => { if (typed) { navigate(parseInt(typed, 10)); setTyped(''); } }}
+          className="bg-tt-cyan text-black font-bold px-2 py-0.5"
+          style={{ fontSize: '0.8em' }}
+        >GO</button>
+
+        <button
+          onClick={() => navigate(Math.min(currentPage + 1, 899))}
+          className="text-tt-cyan border border-tt-cyan/40 px-2 py-0.5 font-bold"
+          style={{ fontSize: '0.8em' }}
+        >►</button>
+      </div>
+
     </footer>
-  );
-}
-
-function SettingsRow() {
-  const { crtMode, scanlineMode, flickerMode, audioEnabled, toggleCRT, toggleScanlines, toggleFlicker, toggleAudio, navigate } = useTeletextStore();
-
-  return (
-    <div className="flex items-center justify-between px-2 py-0.5 border-t border-tt-cyan/20 text-tt-white/50 text-xs">
-      <div className="flex gap-3">
-        <button onClick={toggleCRT}       className={`hover:text-tt-cyan ${crtMode ? 'text-tt-cyan' : ''}`}>CRT</button>
-        <button onClick={toggleScanlines}  className={`hover:text-tt-cyan ${scanlineMode ? 'text-tt-cyan' : ''}`}>SCAN</button>
-        <button onClick={toggleFlicker}    className={`hover:text-tt-cyan ${flickerMode ? 'text-tt-cyan' : ''}`}>FLKR</button>
-        <button onClick={toggleAudio}      className={`hover:text-tt-cyan ${audioEnabled ? 'text-tt-cyan' : ''}`}>SND</button>
-      </div>
-      <div className="flex gap-3">
-        <button onClick={() => navigate(100)}  className="hover:text-tt-white">HOME</button>
-        <button onClick={() => navigate(999)}  className="hover:text-tt-yellow">RAND</button>
-        <button onClick={() => navigate(1983)} className="hover:text-tt-green">1983</button>
-        <button onClick={() => navigate(500)}  className="hover:text-tt-cyan">QUIZ</button>
-      </div>
-    </div>
   );
 }
