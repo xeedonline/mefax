@@ -1,0 +1,257 @@
+{
+  "years": {
+    "1980": {
+      "number1s": [
+        {"month":1,"title":"BRASS IN POCKET","artist":"PRETENDERS"},
+        {"month":2,"title":"COWARD OF THE COUNTY","artist":"KENNY ROGERS"},
+        {"month":3,"title":"ATOMIC","artist":"BLONDIE"},
+        {"month":4,"title":"WORKING MY WAY BACK TO YOU","artist":"DETROIT SPINNERS"},
+        {"month":5,"title":"WHAT'S ANOTHER YEAR","artist":"JOHNNY LOGAN"},
+        {"month":6,"title":"THEME FROM M*A*S*H","artist":"MASH"},
+        {"month":7,"title":"XANADU","artist":"OLIVIA NEWTON-JOHN/ELO"},
+        {"month":8,"title":"ASHES TO ASHES","artist":"DAVID BOWIE"},
+        {"month":9,"title":"DON'T STAND SO CLOSE TO ME","artist":"THE POLICE"},
+        {"month":10,"title":"DON'T STAND SO CLOSE TO ME","artist":"THE POLICE"},
+        {"month":11,"title":"THE TIDE IS HIGH","artist":"BLONDIE"},
+        {"month":12,"title":"THERE'S NO ONE QUITE LIKE GRANDMA","artist":"ST WINIFRED'S SCHOOL CHOIR"}
+      ],
+      "news": [
+        "JOHN LENNON SHOT DEAD IN NEW YORK (DEC 8)",
+        "IRANIAN EMBASSY SIEGE IN LONDON (APR-MAY)",
+        "RONALD REAGAN ELECTED US PRESIDENT",
+        "ZIMBABWE GAINS INDEPENDENCE",
+        "MOUNT ST HELENS ERUPTS IN WASHINGTON STATE"
+      ],
+      "prices": {"petrol_ppl":27,"house_avg":23000,"wage_avg":6000,"pint_beer":40}
+    },
+    "1981": {
+      "number1s": [
+        {"month":1,"title":"IMAGINE","artist":"JOHN LENNON"},
+        {"month":2,"title":"SHADDAP YOU FACE","artist":"JOE DOLCE MUSIC THEATRE"},
+        {"month":3,"title":"THIS OLE HOUSE","artist":"SHAKIN' STEVENS"},
+        {"month":4,"title":"MAKING YOUR MIND UP","artist":"BUCKS FIZZ"},
+        {"month":5,"title":"STAND AND DELIVER","artist":"ADAM & THE ANTS"},
+        {"month":6,"title":"BEGIN THE BEGUINE","artist":"JULIO IGLESIAS"},
+        {"month":7,"title":"GHOST TOWN","artist":"THE SPECIALS"},
+        {"month":8,"title":"GREEN DOOR","artist":"SHAKIN' STEVENS"},
+        {"month":9,"title":"TAINTED LOVE","artist":"SOFT CELL"},
+        {"month":10,"title":"IT'S MY PARTY","artist":"DAVE STEWART"},
+        {"month":11,"title":"EVERY LITTLE THING SHE DOES IS MAGIC","artist":"THE POLICE"},
+        {"month":12,"title":"DON'T YOU WANT ME","artist":"HUMAN LEAGUE"}
+      ],
+      "news": [
+        "PRINCE CHARLES MARRIES LADY DIANA SPENCER (JUL 29)",
+        "BRIXTON AND TOXTETH RIOTS ROCK UK CITIES",
+        "ATTEMPTED ASSASSINATION OF PRESIDENT REAGAN",
+        "HUNGER STRIKER BOBBY SANDS DIES IN MAZE PRISON",
+        "FIRST SPACE SHUTTLE COLUMBIA LAUNCHES"
+      ],
+      "prices": {"petrol_ppl":32,"house_avg":25000,"wage_avg":7000,"pint_beer":47}
+    },
+    "1982": {
+      "number1s": [
+        {"month":1,"title":"THE LAND OF MAKE BELIEVE","artist":"BUCKS FIZZ"},
+        {"month":2,"title":"A TOWN CALLED MALICE","artist":"THE JAM"},
+        {"month":3,"title":"THE LION SLEEPS TONIGHT","artist":"TIGHT FIT"},
+        {"month":4,"title":"MY CAMERA NEVER LIES","artist":"BUCKS FIZZ"},
+        {"month":5,"title":"EBONY AND IVORY","artist":"PAUL McCARTNEY & STEVIE WONDER"},
+        {"month":6,"title":"GOODY TWO SHOES","artist":"ADAM ANT"},
+        {"month":7,"title":"COME ON EILEEN","artist":"DEXYS MIDNIGHT RUNNERS"},
+        {"month":8,"title":"EYE OF THE TIGER","artist":"SURVIVOR"},
+        {"month":9,"title":"PASS THE DUTCHIE","artist":"MUSICAL YOUTH"},
+        {"month":10,"title":"DO YOU REALLY WANT TO HURT ME","artist":"CULTURE CLUB"},
+        {"month":11,"title":"I DON'T WANNA DANCE","artist":"EDDY GRANT"},
+        {"month":12,"title":"SAVE YOUR LOVE","artist":"RENEE & RENATO"}
+      ],
+      "news": [
+        "FALKLANDS WAR BETWEEN UK AND ARGENTINA",
+        "ISRAEL INVADES LEBANON",
+        "CHANNEL 4 LAUNCHES (NOV 2)",
+        "MICHAEL JACKSON RELEASES 'THRILLER'",
+        "FIRST CD PLAYER GOES ON SALE"
+      ],
+      "prices": {"petrol_ppl":36,"house_avg":27000,"wage_avg":7800,"pint_beer":54}
+    },
+    "1983": {
+      "number1s": [
+        {"month":1,"title":"YOU CAN'T HURRY LOVE","artist":"PHIL COLLINS"},
+        {"month":2,"title":"TOO SHY","artist":"KAJAGOOGOO"},
+        {"month":3,"title":"TOTAL ECLIPSE OF THE HEART","artist":"BONNIE TYLER"},
+        {"month":4,"title":"IS THERE SOMETHING I SHOULD KNOW","artist":"DURAN DURAN"},
+        {"month":5,"title":"TRUE","artist":"SPANDAU BALLET"},
+        {"month":6,"title":"EVERY BREATH YOU TAKE","artist":"THE POLICE"},
+        {"month":7,"title":"EVERY BREATH YOU TAKE","artist":"THE POLICE"},
+        {"month":8,"title":"BABY JANE","artist":"ROD STEWART"},
+        {"month":9,"title":"RED RED WINE","artist":"UB40"},
+        {"month":10,"title":"KARMA CHAMELEON","artist":"CULTURE CLUB"},
+        {"month":11,"title":"KARMA CHAMELEON","artist":"CULTURE CLUB"},
+        {"month":12,"title":"ONLY YOU","artist":"FLYING PICKETS"}
+      ],
+      "albums": [
+        {"month":1,"title":"THRILLER","artist":"MICHAEL JACKSON"},
+        {"month":4,"title":"LET'S DANCE","artist":"DAVID BOWIE"},
+        {"month":6,"title":"SYNCHRONICITY","artist":"THE POLICE"},
+        {"month":9,"title":"LABOUR OF LOVE","artist":"UB40"},
+        {"month":10,"title":"COLOUR BY NUMBERS","artist":"CULTURE CLUB"}
+      ],
+      "news": [
+        "MARGARET THATCHER WINS LANDSLIDE ELECTION (JUN 9)",
+        "SEAT BELTS BECOME COMPULSORY IN THE UK",
+        "BREAKFAST TELEVISION LAUNCHES ON BBC",
+        "NEIL KINNOCK BECOMES LABOUR LEADER",
+        "BEIRUT BARRACKS BOMBINGS KILL 241 US MARINES"
+      ],
+      "prices": {"petrol_ppl":39,"house_avg":31000,"wage_avg":8500,"pint_beer":62}
+    },
+    "1984": {
+      "number1s": [
+        {"month":1,"title":"PIPES OF PEACE","artist":"PAUL McCARTNEY"},
+        {"month":2,"title":"99 RED BALLOONS","artist":"NENA"},
+        {"month":3,"title":"HELLO","artist":"LIONEL RICHIE"},
+        {"month":4,"title":"AGAINST ALL ODDS","artist":"PHIL COLLINS"},
+        {"month":5,"title":"THE REFLEX","artist":"DURAN DURAN"},
+        {"month":6,"title":"WAKE ME UP BEFORE YOU GO-GO","artist":"WHAM!"},
+        {"month":7,"title":"TWO TRIBES","artist":"FRANKIE GOES TO HOLLYWOOD"},
+        {"month":8,"title":"CARELESS WHISPER","artist":"GEORGE MICHAEL"},
+        {"month":9,"title":"I JUST CALLED TO SAY I LOVE YOU","artist":"STEVIE WONDER"},
+        {"month":10,"title":"FREEDOM","artist":"WHAM!"},
+        {"month":11,"title":"I FEEL FOR YOU","artist":"CHAKA KHAN"},
+        {"month":12,"title":"DO THEY KNOW IT'S CHRISTMAS","artist":"BAND AID"}
+      ],
+      "news": [
+        "MINERS' STRIKE BEGINS IN MARCH",
+        "IRA BOMB ATTACKS CONSERVATIVE PARTY CONFERENCE IN BRIGHTON",
+        "BAND AID 'DO THEY KNOW IT'S CHRISTMAS' RAISES MILLIONS",
+        "INDIAN PRIME MINISTER INDIRA GANDHI ASSASSINATED",
+        "APPLE LAUNCHES THE MACINTOSH COMPUTER"
+      ],
+      "prices": {"petrol_ppl":41,"house_avg":33000,"wage_avg":9200,"pint_beer":70}
+    },
+    "1985": {
+      "number1s": [
+        {"month":1,"title":"I WANT TO KNOW WHAT LOVE IS","artist":"FOREIGNER"},
+        {"month":2,"title":"I KNOW HIM SO WELL","artist":"ELAINE PAIGE & BARBARA DICKSON"},
+        {"month":3,"title":"YOU SPIN ME ROUND","artist":"DEAD OR ALIVE"},
+        {"month":4,"title":"EASY LOVER","artist":"PHILIP BAILEY & PHIL COLLINS"},
+        {"month":5,"title":"19","artist":"PAUL HARDCASTLE"},
+        {"month":6,"title":"YOU'LL NEVER WALK ALONE","artist":"THE CROWD"},
+        {"month":7,"title":"FRANKIE","artist":"SISTER SLEDGE"},
+        {"month":8,"title":"INTO THE GROOVE","artist":"MADONNA"},
+        {"month":9,"title":"IF I WAS","artist":"MIDGE URE"},
+        {"month":10,"title":"THE POWER OF LOVE","artist":"JENNIFER RUSH"},
+        {"month":11,"title":"A GOOD HEART","artist":"FEARGAL SHARKEY"},
+        {"month":12,"title":"SAVING ALL MY LOVE FOR YOU","artist":"WHITNEY HOUSTON"}
+      ],
+      "news": [
+        "LIVE AID CONCERT WATCHED BY ALMOST 2 BILLION PEOPLE",
+        "BRADFORD STADIUM FIRE KILLS 56 (MAY)",
+        "MINERS' STRIKE ENDS AFTER 51 WEEKS",
+        "NEW COKE LAUNCHED AND QUICKLY PULLED",
+        "HEYSEL STADIUM DISASTER KILLS 39"
+      ],
+      "prices": {"petrol_ppl":43,"house_avg":36000,"wage_avg":10000,"pint_beer":78}
+    },
+    "1986": {
+      "number1s": [
+        {"month":1,"title":"WEST END GIRLS","artist":"PET SHOP BOYS"},
+        {"month":2,"title":"WHEN THE GOING GETS TOUGH","artist":"BILLY OCEAN"},
+        {"month":3,"title":"CHAIN REACTION","artist":"DIANA ROSS"},
+        {"month":4,"title":"A DIFFERENT CORNER","artist":"GEORGE MICHAEL"},
+        {"month":5,"title":"ROCK ME AMADEUS","artist":"FALCO"},
+        {"month":6,"title":"THE CHICKEN SONG","artist":"SPITTING IMAGE"},
+        {"month":7,"title":"PAPA DON'T PREACH","artist":"MADONNA"},
+        {"month":8,"title":"THE LADY IN RED","artist":"CHRIS DE BURGH"},
+        {"month":9,"title":"DON'T LEAVE ME THIS WAY","artist":"COMMUNARDS"},
+        {"month":10,"title":"TRUE BLUE","artist":"MADONNA"},
+        {"month":11,"title":"EVERY LOSER WINS","artist":"NICK BERRY"},
+        {"month":12,"title":"CARAVAN OF LOVE","artist":"HOUSEMARTINS"}
+      ],
+      "news": [
+        "CHERNOBYL NUCLEAR DISASTER IN USSR (APR 26)",
+        "SPACE SHUTTLE CHALLENGER EXPLODES (JAN 28)",
+        "IRAN-CONTRA AFFAIR SCANDAL BREAKS",
+        "MARADONA'S 'HAND OF GOD' IN WORLD CUP (JUN)",
+        "ARGENTINA WIN WORLD CUP, BEATING WEST GERMANY"
+      ],
+      "prices": {"petrol_ppl":38,"house_avg":39000,"wage_avg":11000,"pint_beer":85}
+    },
+    "1987": {
+      "number1s": [
+        {"month":1,"title":"JACK YOUR BODY","artist":"STEVE 'SILK' HURLEY"},
+        {"month":2,"title":"I KNEW YOU WERE WAITING","artist":"ARETHA FRANKLIN & GEORGE MICHAEL"},
+        {"month":3,"title":"EVERYTHING I OWN","artist":"BOY GEORGE"},
+        {"month":4,"title":"LET IT BE","artist":"FERRY AID"},
+        {"month":5,"title":"LA ISLA BONITA","artist":"MADONNA"},
+        {"month":6,"title":"I WANNA DANCE WITH SOMEBODY","artist":"WHITNEY HOUSTON"},
+        {"month":7,"title":"STAR TREKKIN'","artist":"THE FIRM"},
+        {"month":8,"title":"LA BAMBA","artist":"LOS LOBOS"},
+        {"month":9,"title":"NEVER GONNA GIVE YOU UP","artist":"RICK ASTLEY"},
+        {"month":10,"title":"YOU WIN AGAIN","artist":"BEE GEES"},
+        {"month":11,"title":"CHINA IN YOUR HAND","artist":"T'PAU"},
+        {"month":12,"title":"ALWAYS ON MY MIND","artist":"PET SHOP BOYS"}
+      ],
+      "news": [
+        "GREAT STORM DEVASTATES SOUTHERN ENGLAND (OCT 16)",
+        "HERALD OF FREE ENTERPRISE FERRY SINKS",
+        "MARGARET THATCHER WINS THIRD TERM ELECTION",
+        "HUNGERFORD MASSACRE — 16 KILLED",
+        "KING'S CROSS FIRE KILLS 31"
+      ],
+      "prices": {"petrol_ppl":39,"house_avg":44000,"wage_avg":12500,"pint_beer":94}
+    },
+    "1988": {
+      "number1s": [
+        {"month":1,"title":"HEAVEN IS A PLACE ON EARTH","artist":"BELINDA CARLISLE"},
+        {"month":2,"title":"I THINK WE'RE ALONE NOW","artist":"TIFFANY"},
+        {"month":3,"title":"DON'T TURN AROUND","artist":"ASWAD"},
+        {"month":4,"title":"HEART","artist":"PET SHOP BOYS"},
+        {"month":5,"title":"PERFECT","artist":"FAIRGROUND ATTRACTION"},
+        {"month":6,"title":"WITH A LITTLE HELP FROM MY FRIENDS","artist":"WET WET WET"},
+        {"month":7,"title":"NOTHING'S GONNA STOP US NOW","artist":"STARSHIP"},
+        {"month":8,"title":"THE ONLY WAY IS UP","artist":"YAZZ"},
+        {"month":9,"title":"HE AIN'T HEAVY, HE'S MY BROTHER","artist":"HOLLIES"},
+        {"month":10,"title":"ONE MOMENT IN TIME","artist":"WHITNEY HOUSTON"},
+        {"month":11,"title":"ORINOCO FLOW","artist":"ENYA"},
+        {"month":12,"title":"MISTLETOE AND WINE","artist":"CLIFF RICHARD"}
+      ],
+      "news": [
+        "LOCKERBIE BOMBING KILLS 270 (DEC 21)",
+        "SEAMEN'S UNION DISPUTE — CHANNEL TUNNEL WORK BEGINS",
+        "PIPER ALPHA OIL PLATFORM DISASTER KILLS 167",
+        "SALMAN RUSHDIE'S THE SATANIC VERSES PUBLISHED",
+        "SEOUL OLYMPICS — BEN JOHNSON STRIPPED OF GOLD"
+      ],
+      "prices": {"petrol_ppl":38,"house_avg":53000,"wage_avg":13500,"pint_beer":98}
+    },
+    "1989": {
+      "number1s": [
+        {"month":1,"title":"ESPECIALLY FOR YOU","artist":"KYLIE & JASON"},
+        {"month":2,"title":"SOMETHING'S GOTTEN HOLD OF MY HEART","artist":"MARC ALMOND & GENE PITNEY"},
+        {"month":3,"title":"TOO MANY BROKEN HEARTS","artist":"JASON DONOVAN"},
+        {"month":4,"title":"ETERNAL FLAME","artist":"BANGLES"},
+        {"month":5,"title":"HAND ON YOUR HEART","artist":"KYLIE MINOGUE"},
+        {"month":6,"title":"FERRY CROSS THE MERSEY","artist":"GERRY & THE PACEMAKERS"},
+        {"month":7,"title":"YOU'LL NEVER STOP ME LOVING YOU","artist":"SONIA"},
+        {"month":8,"title":"SWING THE MOOD","artist":"JIVE BUNNY"},
+        {"month":9,"title":"RIDE ON TIME","artist":"BLACK BOX"},
+        {"month":10,"title":"THAT'S WHAT I LIKE","artist":"JIVE BUNNY"},
+        {"month":11,"title":"ALL AROUND THE WORLD","artist":"LISA STANSFIELD"},
+        {"month":12,"title":"DO THEY KNOW IT'S CHRISTMAS","artist":"BAND AID II"}
+      ],
+      "news": [
+        "BERLIN WALL FALLS (NOV 9) — END OF COLD WAR",
+        "HILLSBOROUGH DISASTER KILLS 96 LIVERPOOL FANS",
+        "TIANANMEN SQUARE MASSACRE IN BEIJING",
+        "EXXON VALDEZ OIL SPILL IN ALASKA",
+        "EASTERN EUROPE REVOLUTIONS TOPPLE COMMUNIST REGIMES"
+      ],
+      "prices": {"petrol_ppl":42,"house_avg":58000,"wage_avg":14500,"pint_beer":106}
+    }
+  },
+  "nowPrices": {
+    "petrol_ppl": 143,
+    "house_avg": 288000,
+    "wage_avg": 35000,
+    "pint_beer": 480
+  }
+}

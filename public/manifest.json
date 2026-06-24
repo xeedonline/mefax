@@ -1,0 +1,27 @@
+{
+  "name": "Teletext UK",
+  "short_name": "TELETEXT",
+  "description": "The authentic British Teletext experience — like Ceefax never died",
+  "start_url": "/100",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["news", "entertainment"],
+  "shortcuts": [
+    { "name": "UK News",   "url": "/101", "description": "UK News Headlines" },
+    { "name": "Weather",   "url": "/150", "description": "UK Weather" },
+    { "name": "Bamboozle", "url": "/500", "description": "Teletext Quiz" }
+  ]
+}

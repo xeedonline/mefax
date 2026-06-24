@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Authentic Teletext Level-1 RGB palette ── */
+  --color-tt-black:   #000000;
+  --color-tt-red:     #ff0000;
+  --color-tt-green:   #00ff00;
+  --color-tt-yellow:  #ffff00;
+  --color-tt-blue:    #0000ff;
+  --color-tt-magenta: #ff00ff;
+  --color-tt-cyan:    #00ffff;
+  --color-tt-white:   #ffffff;
+
+  /* Darker variants (dimmed) */
+  --color-tt-red-d:     #800000;
+  --color-tt-green-d:   #008000;
+  --color-tt-blue-d:    #000080;
+  --color-tt-magenta-d: #800080;
+  --color-tt-cyan-d:    #008080;
+
+  /* FastText button band colours */
+  --color-fasttext-red:    #cc0000;
+  --color-fasttext-green:  #007700;
+  --color-fasttext-yellow: #888800;
+  --color-fasttext-blue:   #0000aa;
+
+  --font-teletext: var(--font-vt323), 'Courier New', Courier, monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ── Reset ── */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #000; }
+
+/* ── CRT scanline overlay ── */
+.crt-scanlines::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.20) 2px,
+    rgba(0, 0, 0, 0.20) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Screen flicker ── */
+@keyframes crt-flicker {
+  0%, 90%, 94%, 100% { opacity: 1; }
+  91%, 93%            { opacity: 0.78; }
+}
+.crt-flicker { animation: crt-flicker 7s infinite; }
+
+/* ── Teletext page reveal (loading effect) ── */
+@keyframes tt-reveal {
+  from { opacity: 0.3; }
+  to   { opacity: 1; }
+}
+.tt-reveal { animation: tt-reveal 0.12s ease-out; }
+
+/* ── Blinking text ── */
+@keyframes tt-blink {
+  0%, 49%  { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.tt-blink { animation: tt-blink 1s step-end infinite; }
+
+/* ── Slow flash ── */
+@keyframes tt-slow-blink {
+  0%, 59%  { opacity: 1; }
+  60%, 100% { opacity: 0; }
+}
+.tt-slow-blink { animation: tt-slow-blink 1.5s step-end infinite; }
+
+/* ── Double-height header trick ── */
+.tt-double {
+  font-size: 200%;
+  line-height: 0.67;
+  display: block;
+  overflow: hidden;
+  height: 1em;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Scrollbar hide on Teletext screen ── */
+.tt-screen, .tt-content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tt-screen::-webkit-scrollbar,
+.tt-content::-webkit-scrollbar { display: none; }
+
+/* ── Teletext font sizing ── */
+.tt-text {
+  font-family: var(--font-teletext);
+  font-size: clamp(11px, 2.45vw, 26px);
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+/* Mobile larger tap targets */
+@media (max-width: 640px) {
+  .tt-text { font-size: clamp(11px, 3.2vw, 18px); }
+}
+
+/* ── Breaking news pulse ── */
+@keyframes breaking-pulse {
+  0%, 100% { background-color: #cc0000; }
+  50%       { background-color: #ff0000; }
+}
+.breaking-pulse { animation: breaking-pulse 0.8s ease-in-out infinite; }
+
+/* ── Teletext "wobble" on page load (optional) ── */
+@keyframes tt-wobble {
+  0%   { transform: translateX(-1px); }
+  25%  { transform: translateX(1px); }
+  50%  { transform: translateX(-0.5px); }
+  75%  { transform: translateX(0.5px); }
+  100% { transform: translateX(0); }
 }
